@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <title>Skroutz Blacklist</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      width: 320px;
+      background: #f9fafb;
+      color: #111827;
+    }
+
+    header {
+      background: #dc2626;
+      color: white;
+      padding: 14px 16px;
+    }
+
+    header h1 {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    header p {
+      font-size: 11px;
+      opacity: 0.85;
+      margin-top: 2px;
+    }
+
+    .content {
+      padding: 14px 16px;
+    }
+
+    .add-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .add-row input {
+      flex: 1;
+      padding: 8px 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .add-row input:focus {
+      border-color: #dc2626;
+    }
+
+    .add-row button {
+      padding: 8px 14px;
+      background: #dc2626;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .add-row button:hover {
+      background: #b91c1c;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    #shop-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      max-height: 280px;
+      overflow-y: auto;
+    }
+
+    #shop-list li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-size: 13px;
+    }
+
+    #shop-list li .shop-name {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    #shop-list li .badge {
+      background: #fef2f2;
+      color: #dc2626;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 1px 6px;
+      border-radius: 10px;
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+
+    #shop-list li button.remove {
+      background: none;
+      border: none;
+      color: #9ca3af;
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 1;
+      padding: 0 2px;
+      transition: color 0.15s;
+      flex-shrink: 0;
+    }
+
+    #shop-list li button.remove:hover {
+      color: #dc2626;
+    }
+
+    .empty-state {
+      text-align: center;
+      color: #9ca3af;
+      font-size: 12px;
+      padding: 20px 0;
+    }
+
+    .empty-state span {
+      font-size: 28px;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    #status-msg {
+      font-size: 11px;
+      color: #059669;
+      text-align: center;
+      height: 16px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚫 Skroutz Blacklist</h1>
+    <p>Διαχείριση καταστημάτων που αποφεύγεις</p>
+  </header>
+
+  <div class="content">
+    <div class="add-row">
+      <input type="text" id="shop-input" placeholder="Όνομα καταστήματος..." />
+      <button id="add-btn">Προσθήκη</button>
+    </div>
+
+    <div class="section-label">Blacklisted καταστήματα</div>
+
+    <ul id="shop-list">
+      <!-- populated by popup.js -->
+    </ul>
+
+    <div id="status-msg"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

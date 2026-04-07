@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Skroutz Blacklist",
+  "version": "1.0",
+  "description": "Σήμανε καταστήματα ως blacklist στο Skroutz",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://www.skroutz.gr/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Skroutz Blacklist"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.skroutz.gr/*"],
+      "js": ["content.js"],
+      "css": ["style.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

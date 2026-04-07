@@ -1,0 +1,37 @@
+/* Blacklisted shop styling */
+.skroutz-blacklisted {
+  background-color: rgba(220, 38, 38, 0.08) !important;
+  border: 1px solid rgba(220, 38, 38, 0.3) !important;
+  border-radius: 4px;
+  position: relative;
+}
+
+.skroutz-blacklisted * {
+  color: #b91c1c !important;
+  text-decoration: line-through !important;
+}
+
+.skroutz-blacklisted img {
+  opacity: 0.4 !important;
+  filter: grayscale(60%) !important;
+  text-decoration: none !important;
+}
+
+.skroutz-blacklisted a {
+  text-decoration: line-through !important;
+}
+
+.skroutz-blacklist-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: #dc2626;
+  color: white !important;
+  font-size: 10px !important;
+  font-weight: bold !important;
+  padding: 2px 6px !important;
+  border-radius: 3px !important;
+  text-decoration: none !important;
+  z-index: 9999;
+  pointer-events: none;
+}
